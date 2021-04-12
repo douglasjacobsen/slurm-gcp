@@ -393,6 +393,8 @@ properties:
       - max_node_count
       - zone
       optional :
+      - gvnic
+      - network_tier1
       - image_hyperthreads
       - compute_disk_type
       - compute_disk_size_gb

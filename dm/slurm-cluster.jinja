@@ -196,6 +196,20 @@ resources:
     sourceImage: {{ part['image'] }}
     bootDiskType: {{ part['compute_disk_type'] }}
     bootDiskSizeGb: {{ part['compute_disk_size_gb'] }}
+
+    {% if part['gvnic'] %}
+    gvnic: {{ part['gvnic'] }}
+
+    {% if part['network_tier1'] %}
+    network_tier1: part['network_tier1']
+    {% else %}
+    network_tier1: 'false'
+    {% endif %}
+
+    {% else %}
+    gvnic: 'false'
+    {% endif }
+
     networks:
       - {{ vpc_net }}
     subnetworks:

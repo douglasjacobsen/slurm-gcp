@@ -93,5 +93,7 @@ variable "partitions" {
     regional_capacity    = bool,
     regional_policy      = any,
     instance_template    = string,
-  static_node_count = number }))
+    gvnic = bool,
+    network_tier1 = bool,
+  static_node_count = number}))
 }

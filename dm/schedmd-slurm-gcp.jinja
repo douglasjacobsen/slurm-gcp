@@ -97,6 +97,10 @@ resources:
         compute_disk_type: {{ properties['compute1_disk_type'] }}
         compute_disk_size_gb: {{ properties['compute1_disk_size_gb'] }}
         max_node_count: {{ properties['compute1_max_node_count'] }}
+        gvnic: {{ properties['compute1_gvnic'] }}
+      {% if properties['compute1_gvnic'] %}
+        network_tier1: {{ properties['compute1_network_tier1'] }}
+      {% endif %}
       {% if properties['compute1_gpu_count']|int > 0 and properties['compute1_gpu_type'] != 'None' %}
         gpu_count: {{ properties['compute1_gpu_count'] | int }}
         gpu_type: {{ properties['compute1_gpu_type'] }}
