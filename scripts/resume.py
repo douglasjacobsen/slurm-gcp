@@ -293,8 +293,7 @@ def create_placement_groups(arg_job_id, vm_count, region):
             'name': pg_name,
             'region': region,
             'groupPlacementPolicy': {
-                "collocation": "COLLOCATED",
-                "vmCount": min(vm_count - i, PLACEMENT_MAX_CNT)
+                "collocation": "COLLOCATED"
              }
         }
 
